@@ -13,6 +13,7 @@ rm -rfd build/iOSOnlineDebug.build
 lipo -create build/libiOSOnlineDebug_ARM.a build/libiOSOnlineDebug_SIM.a -output build/libiOSOnlineDebug_fat.a
 
 cp iOSOnlineDebug/iOSOnlineDebug.h build/iOSOnlineDebug.h
+cp -r iOSOnlineDebug/OnlineDebug.bundle build/OnlineDebug.bundle
 
 rm -f build/libiOSOnlineDebug_ARM.a
 rm -f build/libiOSOnlineDebug_SIM.a
