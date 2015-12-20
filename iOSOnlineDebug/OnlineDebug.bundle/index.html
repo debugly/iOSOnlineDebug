@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <title>在线debug系统</title>
+  <link href="res/css/style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="res/js/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="res/js/navbar.js"></script>
+
+<style type="text/css">
+
+.customBtnDivStyle
+{
+left: 45%;
+top: 260px;
+width:150px;
+height: 30px;
+background-color:yellow;
+border:2px solid;
+border-radius:25px;
+position:relative;
+display: block;
+/*里面子视图的位置；*/
+text-align: center;
+vertical-align: middle;
+}
+
+.customBtnHrefStyle
+{
+color: black;
+position:relative;
+top: 15%;
+vertical-align:middle;
+/*background-color:red;*/
+
+}
+</style>
+  <SCRIPT type="text/javascript">
+
+		$(document).ready(function(){
+			var navbar = new Navbar({ parentDom: $('body') });
+			navbar.version("debug on line");
+
+			$('body').append($('<div class="customBtnDivStyle"><a class="customBtnHrefStyle" href = "./index_viewer.html"> 1.调试视图</a>'));
+			$('body').append($('</br>'));
+			$('body').append($('<div class="customBtnDivStyle"><a class="customBtnHrefStyle" href = "./index_sandbox.html"> 2.调试沙盒</a></div>'));
+
+		});
+
+	</SCRIPT>
+
+</head>
+
+
+
+<body>
+
+
+</body>
+
+</html>

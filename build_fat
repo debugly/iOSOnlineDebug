@@ -1,0 +1,18 @@
+rm -rfd build
+
+xcodebuild -configuration Release -target iOSOnlineDebug -sdk iphonesimulator
+cp build/Release-iphonesimulator/libiOSOnlineDebug.a build/libiOSOnlineDebug_SIM.a
+
+xcodebuild -configuration Release -target iOSOnlineDebug -sdk iphoneos
+cp build/Release-iphoneos/libiOSOnlineDebug.a build/libiOSOnlineDebug_ARM.a
+
+rm -rfd build/Release-iphoneos
+rm -rfd build/Release-iphonesimulator
+rm -rfd build/iOSOnlineDebug.build
+
+lipo -create build/libiOSOnlineDebug_ARM.a build/libiOSOnlineDebug_SIM.a -output build/libiOSOnlineDebug_fat.a
+
+cp iOSOnlineDebug/iOSOnlineDebug.h build/iOSOnlineDebug.h
+
+rm -f build/libiOSOnlineDebug_ARM.a
+rm -f build/libiOSOnlineDebug_SIM.a
